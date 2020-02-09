@@ -7,6 +7,9 @@ namespace speechtotext_wpf_core.Viewmodel
 {
     public class MainVM : INotifyPropertyChanged
     {
+        /// <summary>
+        /// Intermediate recognition result
+        /// </summary>
         private string _speech = "";
         public string Speech
         {
@@ -18,6 +21,9 @@ namespace speechtotext_wpf_core.Viewmodel
             }
         }
 
+        /// <summary>
+        /// The transcribed audio
+        /// </summary>
         private string _transcribed = "";
         public string Transcribed
         {
@@ -29,6 +35,9 @@ namespace speechtotext_wpf_core.Viewmodel
             }
         }
 
+        /// <summary>
+        /// Indicates if the session is started or stopped
+        /// </summary>
         private string _startstop = "Start";
         public string StartStop
         {
@@ -40,6 +49,9 @@ namespace speechtotext_wpf_core.Viewmodel
             }
         }
 
+        /// <summary>
+        /// Displays status or error messages
+        /// </summary>
         private string _status = "";
         public string Status
         {
