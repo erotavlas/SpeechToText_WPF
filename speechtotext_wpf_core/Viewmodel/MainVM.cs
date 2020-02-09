@@ -50,7 +50,7 @@ namespace speechtotext_wpf_core.Viewmodel
         }
 
         /// <summary>
-        /// Displays status or error messages
+        /// Status or error messages
         /// </summary>
         private string _status = "";
         public string Status
