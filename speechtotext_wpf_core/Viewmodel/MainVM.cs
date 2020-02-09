@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace speechtotext_wpf_core.Viewmodel
 {
-    public class MainVM : BindableBase
+    public class MainVM : INotifyPropertyChanged
     {
         private string _speech = "";
         public string Speech
@@ -12,7 +13,8 @@ namespace speechtotext_wpf_core.Viewmodel
             get { return _speech; }
             set
             {
-                SetProperty(ref _speech, value);
+                _speech = value;
+                OnPropertyChanged("Speech");
             }
         }
 
@@ -22,7 +24,8 @@ namespace speechtotext_wpf_core.Viewmodel
             get { return _transcribed; }
             set
             {
-                SetProperty(ref _transcribed, value);
+                _transcribed = value;
+                OnPropertyChanged("Transcribed");
             }
         }
 
@@ -32,7 +35,8 @@ namespace speechtotext_wpf_core.Viewmodel
             get { return _startstop; }
             set
             {
-                SetProperty(ref _startstop, value);
+                _startstop = value;
+                OnPropertyChanged("StartStop");
             }
         }
 
@@ -42,8 +46,21 @@ namespace speechtotext_wpf_core.Viewmodel
             get { return _status; }
             set
             {
-                SetProperty(ref _status, value);
+                _status = value;
+                OnPropertyChanged("Status");
             }
         }
+
+        #region INotifyPropertyChanged Members  
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void OnPropertyChanged(string propertyName)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+        #endregion
     }
 }
