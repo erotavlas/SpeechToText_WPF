@@ -16,7 +16,7 @@
             <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
         
-        <TextBlock Grid.Row="0" Margin="10,30,0,0" TextWrapping="Wrap">Intermeditate Result</TextBlock>
+        <TextBlock Grid.Row="0" Margin="10,30,0,0" TextWrapping="Wrap">Intermediate Result</TextBlock>
         <Border Grid.Row="1"  Margin="10,0,10,10" BorderThickness="1" BorderBrush="LightGray">
             <TextBlock   Text="{Binding Speech}"></TextBlock>
         </Border>
